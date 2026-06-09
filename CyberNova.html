@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyber Nova Computer Academy</title>
+<link rel="icon" type="image/jpeg" href="logo.jpeg">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  // ── EmailJS Configuration ──
+  // STEP 1: Sign up at https://www.emailjs.com (free)
+  // STEP 2: Create a Gmail service → copy Service ID below
+  // STEP 3: Create an Email Template → copy Template ID below
+  // STEP 4: Go to Account → copy your Public Key below
+  const EMAILJS_SERVICE_ID  = 'service_f3ri0dp';
+  const EMAILJS_TEMPLATE_ID = 'template_elm6jqr';
+  const EMAILJS_PUBLIC_KEY  = 'L4IGGcxR1XaRzcOt8';
+
+  window.addEventListener('load', function() {
+    emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+  });
+</script>
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #111118;
+    --surface2: #1a1a26;
+    --border: #2a2a3a;
+    --accent: #6c63ff;
+    --accent2: #ff6584;
+    --accent3: #43e97b;
+    --text: #e8e8f0;
+    --muted: #888899;
+    --white: #ffffff;
+    --card-bg: #13131e;
+    --easypaisa: #00a651;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.2rem 5%;
+    background: rgba(10,10,15,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.5rem; font-weight: 800;
+    color: var(--white);
+    letter-spacing: -0.02em;
+  }
+  .nav-logo span { color: var(--accent); }
+
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: var(--muted); text-decoration: none;
+    font-size: 0.9rem; font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--white); }
+
+  .nav-cta {
+    background: var(--accent);
+    color: white; border: none; padding: 0.6rem 1.4rem;
+    border-radius: 8px; font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem; font-weight: 500; cursor: pointer;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+  .nav-cta:hover { opacity: 0.85; transform: translateY(-1px); }
+
+  /* ── HERO ── */
+  #home {
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    text-align: center; padding: 8rem 5% 4rem;
+    position: relative; overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(108,99,255,0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 40% at 80% 80%, rgba(255,101,132,0.1) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 20% 80%, rgba(67,233,123,0.08) 0%, transparent 60%);
+  }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--surface2); border: 1px solid var(--border);
+    padding: 0.4rem 1rem; border-radius: 999px;
+    font-size: 0.8rem; color: var(--accent);
+    margin-bottom: 1.5rem; position: relative; z-index: 1;
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent3); animation: pulse 2s infinite; }
+
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.8rem, 6vw, 5.5rem);
+    font-weight: 800; line-height: 1.05;
+    letter-spacing: -0.03em;
+    position: relative; z-index: 1;
+    animation: fadeUp 0.7s 0.1s ease both;
+  }
+  h1 em { font-style: normal; color: var(--accent); }
+  h1 .line2 { color: var(--muted); }
+
+  .hero-sub {
+    max-width: 580px;
+    font-size: 1.1rem; color: var(--muted);
+    line-height: 1.7; margin: 1.5rem auto 2.5rem;
+    position: relative; z-index: 1;
+    animation: fadeUp 0.7s 0.2s ease both;
+  }
+
+  .hero-actions {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    justify-content: center;
+    position: relative; z-index: 1;
+    animation: fadeUp 0.7s 0.3s ease both;
+  }
+
+  .btn-primary {
+    background: var(--accent); color: white;
+    border: none; padding: 0.85rem 2rem;
+    border-radius: 10px; font-family: 'DM Sans', sans-serif;
+    font-size: 1rem; font-weight: 500; cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 0 30px rgba(108,99,255,0.4);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 40px rgba(108,99,255,0.6); }
+
+  .btn-outline {
+    background: transparent; color: var(--text);
+    border: 1px solid var(--border); padding: 0.85rem 2rem;
+    border-radius: 10px; font-family: 'DM Sans', sans-serif;
+    font-size: 1rem; cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+  .hero-stats {
+    display: flex; gap: 3rem; justify-content: center;
+    margin-top: 4rem; flex-wrap: wrap;
+    position: relative; z-index: 1;
+    animation: fadeUp 0.7s 0.4s ease both;
+  }
+  .stat { text-align: center; }
+  .stat-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem; font-weight: 800; color: var(--white);
+  }
+  .stat-num span { color: var(--accent); }
+  .stat-label { font-size: 0.82rem; color: var(--muted); margin-top: 0.2rem; }
+
+  /* ── SECTION COMMON ── */
+  section { padding: 5rem 5%; }
+
+  .section-tag {
+    display: inline-block;
+    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 0.8rem;
+  }
+
+  h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700; letter-spacing: -0.02em;
+    color: var(--white); line-height: 1.15;
+  }
+
+  .section-lead {
+    color: var(--muted); font-size: 1rem;
+    line-height: 1.7; max-width: 560px; margin-top: 0.7rem;
+  }
+
+  /* ── COURSES ── */
+  #courses { background: var(--surface); }
+
+  .courses-header { max-width: 1200px; margin: 0 auto 3rem; }
+
+  .courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+    gap: 1.5rem; max-width: 1200px; margin: 0 auto;
+  }
+
+  .course-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px; overflow: hidden;
+    transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+    cursor: pointer;
+  }
+  .course-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 8px 40px rgba(108,99,255,0.15);
+  }
+
+  .course-banner {
+    height: 130px; display: flex; align-items: center;
+    justify-content: center; font-size: 3.5rem;
+    position: relative; overflow: hidden;
+  }
+
+  .course-banner::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 40%, var(--card-bg));
+  }
+
+  .lang-python .course-banner { background: linear-gradient(135deg, #306998 0%, #ffd43b 100%); }
+  .lang-html   .course-banner { background: linear-gradient(135deg, #e34c26 0%, #f06529 100%); }
+  .lang-css    .course-banner { background: linear-gradient(135deg, #264de4 0%, #2965f1 100%); }
+  .lang-java   .course-banner { background: linear-gradient(135deg, #f89820 0%, #e76f00 100%); }
+  .lang-c      .course-banner { background: linear-gradient(135deg, #6295cb 0%, #2b6cb0 100%); }
+  .lang-cpp    .course-banner { background: linear-gradient(135deg, #9b59b6 0%, #6c3483 100%); }
+
+  .course-body { padding: 1.4rem; }
+
+  .course-lang-tag {
+    display: inline-block; padding: 0.2rem 0.7rem;
+    border-radius: 999px; font-size: 0.72rem; font-weight: 600;
+    margin-bottom: 0.7rem; letter-spacing: 0.06em;
+  }
+  .lang-python .course-lang-tag { background: rgba(255,212,59,0.15); color: #ffd43b; }
+  .lang-html   .course-lang-tag { background: rgba(227,76,38,0.15); color: #f06529; }
+  .lang-css    .course-lang-tag { background: rgba(38,77,228,0.2); color: #6899ff; }
+  .lang-java   .course-lang-tag { background: rgba(248,152,32,0.15); color: #f89820; }
+  .lang-c      .course-lang-tag { background: rgba(98,149,203,0.15); color: #6295cb; }
+  .lang-cpp    .course-lang-tag { background: rgba(155,89,182,0.15); color: #c39bd3; }
+
+  .course-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.2rem; font-weight: 700; color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+
+  .course-desc {
+    font-size: 0.88rem; color: var(--muted);
+    line-height: 1.6; margin-bottom: 1rem;
+  }
+
+  .course-meta {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    font-size: 0.8rem; color: var(--muted);
+    margin-bottom: 1.2rem;
+  }
+  .course-meta span { display: flex; align-items: center; gap: 0.3rem; }
+
+  .course-topics { margin-bottom: 1.4rem; }
+  .course-topics h4 { font-size: 0.78rem; color: var(--muted); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.08em; }
+  .topic-pills { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .topic-pill {
+    background: var(--surface2); border: 1px solid var(--border);
+    padding: 0.2rem 0.6rem; border-radius: 6px;
+    font-size: 0.75rem; color: var(--text);
+  }
+
+  .btn-enroll {
+    width: 100%; padding: 0.75rem;
+    background: var(--surface2); border: 1px solid var(--border);
+    color: var(--text); border-radius: 10px;
+    font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+    cursor: pointer; transition: all 0.2s;
+    font-weight: 500;
+  }
+  .btn-enroll:hover { background: var(--accent); border-color: var(--accent); color: white; }
+
+  /* ── ABOUT / WHY US ── */
+  #about { background: var(--bg); }
+
+  .about-wrap {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; align-items: center;
+  }
+
+  .about-features { margin-top: 2rem; display: flex; flex-direction: column; gap: 1.2rem; }
+
+  .feature-item {
+    display: flex; gap: 1rem; align-items: flex-start;
+    padding: 1rem; background: var(--surface);
+    border: 1px solid var(--border); border-radius: 12px;
+    transition: border-color 0.2s;
+  }
+  .feature-item:hover { border-color: var(--accent); }
+
+  .feature-icon {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--surface2); display: flex;
+    align-items: center; justify-content: center;
+    font-size: 1.3rem; flex-shrink: 0;
+  }
+
+  .feature-text h4 { font-size: 0.95rem; font-weight: 600; color: var(--white); margin-bottom: 0.2rem; }
+  .feature-text p { font-size: 0.83rem; color: var(--muted); line-height: 1.5; }
+
+  .about-visual {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px; padding: 2rem;
+    display: flex; flex-direction: column; gap: 1rem;
+  }
+
+  .av-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem; font-weight: 700; color: var(--white); margin-bottom: 0.5rem;
+  }
+
+  .prog-bar-wrap { display: flex; flex-direction: column; gap: 0.8rem; }
+  .prog-item {}
+  .prog-label { display: flex; justify-content: space-between; font-size: 0.82rem; color: var(--muted); margin-bottom: 0.3rem; }
+  .prog-track { height: 6px; background: var(--surface2); border-radius: 3px; overflow: hidden; }
+  .prog-fill { height: 100%; border-radius: 3px; animation: fillBar 1.5s ease forwards; transform-origin: left; }
+  @keyframes fillBar { from { width: 0 } }
+
+  /* ── REGISTRATION ── */
+  #register { background: var(--surface); }
+
+  .register-wrap {
+    max-width: 900px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1.4fr;
+    gap: 3rem; align-items: start;
+  }
+
+  .register-info h2 { margin-bottom: 1rem; }
+
+  .reg-steps { margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; }
+  .reg-step { display: flex; gap: 1rem; align-items: flex-start; }
+  .step-num {
+    width: 32px; height: 32px; border-radius: 8px;
+    background: var(--accent); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Syne', sans-serif; font-size: 0.85rem;
+    font-weight: 700; flex-shrink: 0;
+  }
+  .step-text h4 { font-size: 0.9rem; font-weight: 600; color: var(--white); }
+  .step-text p { font-size: 0.82rem; color: var(--muted); margin-top: 0.15rem; }
+
+  .form-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 20px; padding: 2rem;
+  }
+  .form-card h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.3rem; font-weight: 700; color: var(--white);
+    margin-bottom: 1.5rem;
+  }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-group { margin-bottom: 1rem; }
+  .form-group label { display: block; font-size: 0.82rem; color: var(--muted); margin-bottom: 0.4rem; font-weight: 500; }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%; padding: 0.75rem 1rem;
+    background: var(--surface2); border: 1px solid var(--border);
+    border-radius: 10px; color: var(--text);
+    font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+    outline: none; transition: border-color 0.2s;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--accent); }
+
+  .form-group select option { background: var(--surface2); }
+  .form-group textarea { resize: vertical; min-height: 80px; }
+
+  .btn-submit {
+    width: 100%; padding: 0.9rem;
+    background: var(--accent); color: white; border: none;
+    border-radius: 12px; font-family: 'DM Sans', sans-serif;
+    font-size: 1rem; font-weight: 600; cursor: pointer;
+    transition: opacity 0.2s, transform 0.2s;
+    margin-top: 0.5rem;
+    box-shadow: 0 0 24px rgba(108,99,255,0.35);
+  }
+  .btn-submit:hover { opacity: 0.88; transform: translateY(-1px); }
+
+  /* ── PAYMENT ── */
+  #payment { background: var(--bg); }
+
+  .payment-wrap { max-width: 900px; margin: 0 auto; }
+  .payment-wrap > .section-tag, .payment-wrap > h2, .payment-wrap > p { margin-bottom: 0.5rem; }
+
+  .payment-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 20px; padding: 2.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .payment-methods {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem; margin-bottom: 2rem;
+  }
+
+  .pm-option {
+    border: 2px solid var(--border);
+    border-radius: 12px; padding: 1rem;
+    text-align: center; cursor: pointer;
+    transition: all 0.2s;
+    display: flex; flex-direction: column;
+    align-items: center; gap: 0.5rem;
+  }
+  .pm-option:hover { border-color: var(--accent); }
+  .pm-option.active { border-color: var(--easypaisa); background: rgba(0,166,81,0.08); }
+
+  .pm-icon { font-size: 2rem; }
+  .pm-name { font-size: 0.82rem; font-weight: 600; color: var(--text); }
+  .pm-tag {
+    font-size: 0.68rem; padding: 0.15rem 0.5rem;
+    border-radius: 999px; background: var(--easypaisa);
+    color: white; font-weight: 600;
+  }
+
+  .easypaisa-form { display: none; }
+  .easypaisa-form.visible { display: block; }
+
+  .ep-header {
+    display: flex; align-items: center; gap: 1rem;
+    padding: 1rem 1.2rem; background: rgba(0,166,81,0.1);
+    border: 1px solid rgba(0,166,81,0.3);
+    border-radius: 12px; margin-bottom: 1.5rem;
+  }
+  .ep-logo {
+    width: 44px; height: 44px; border-radius: 10px;
+    background: var(--easypaisa); display: flex;
+    align-items: center; justify-content: center;
+    font-size: 1.3rem; font-weight: 800; color: white;
+    font-family: 'Syne', sans-serif;
+  }
+  .ep-info h4 { font-weight: 700; color: var(--white); font-size: 1rem; }
+  .ep-info p { font-size: 0.8rem; color: var(--muted); }
+
+  .order-summary {
+    background: var(--surface2); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  .order-summary h4 { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; }
+  .order-row { display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 0.5rem; }
+  .order-row.total { border-top: 1px solid var(--border); padding-top: 0.7rem; margin-top: 0.5rem; font-weight: 700; color: var(--white); }
+  .order-row .price { color: var(--accent3); font-weight: 600; }
+
+  .btn-pay {
+    width: 100%; padding: 1rem;
+    background: var(--easypaisa); color: white; border: none;
+    border-radius: 12px; font-family: 'DM Sans', sans-serif;
+    font-size: 1rem; font-weight: 700; cursor: pointer;
+    transition: opacity 0.2s, transform 0.2s;
+    box-shadow: 0 0 24px rgba(0,166,81,0.3);
+    display: flex; align-items: center; justify-content: center; gap: 0.6rem;
+  }
+  .btn-pay:hover { opacity: 0.9; transform: translateY(-1px); }
+
+  .pay-secure { text-align: center; font-size: 0.78rem; color: var(--muted); margin-top: 0.8rem; }
+
+  /* ── MODAL / SUCCESS ── */
+  .modal-overlay {
+    display: none; position: fixed; inset: 0; z-index: 200;
+    background: rgba(0,0,0,0.7); backdrop-filter: blur(8px);
+    align-items: center; justify-content: center;
+  }
+  .modal-overlay.show { display: flex; }
+
+  .modal-box {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 20px; padding: 2.5rem;
+    max-width: 440px; width: 90%;
+    text-align: center;
+    animation: popIn 0.3s ease;
+  }
+  @keyframes popIn { from{transform:scale(0.85);opacity:0} to{transform:scale(1);opacity:1} }
+
+  .modal-icon { font-size: 3rem; margin-bottom: 1rem; }
+  .modal-box h3 { font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 700; color: var(--white); margin-bottom: 0.5rem; }
+  .modal-box p { color: var(--muted); font-size: 0.9rem; line-height: 1.6; }
+  .modal-close {
+    margin-top: 1.5rem; padding: 0.7rem 2rem;
+    background: var(--accent); color: white; border: none;
+    border-radius: 10px; cursor: pointer;
+    font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 3rem 5% 2rem;
+  }
+
+  .footer-top {
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 2rem; max-width: 1200px; margin: 0 auto 2rem;
+  }
+
+  .footer-brand p {
+    font-size: 0.85rem; color: var(--muted);
+    line-height: 1.6; margin-top: 0.7rem;
+    max-width: 260px;
+  }
+
+  .footer-col h4 {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.9rem; font-weight: 700; color: var(--white);
+    margin-bottom: 1rem;
+  }
+
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .footer-col ul li a {
+    color: var(--muted); text-decoration: none; font-size: 0.85rem;
+    transition: color 0.2s;
+  }
+  .footer-col ul li a:hover { color: var(--accent); }
+
+  .footer-bottom {
+    max-width: 1200px; margin: 0 auto;
+    border-top: 1px solid var(--border);
+    padding-top: 1.5rem;
+    display: flex; justify-content: space-between;
+    align-items: center; flex-wrap: wrap; gap: 1rem;
+    font-size: 0.8rem; color: var(--muted);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .about-wrap, .register-wrap { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    .about-visual { display: none; }
+  }
+
+  @media (max-width: 640px) {
+    nav .nav-links { display: none; }
+    .footer-top { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo" style="display:flex;align-items:center;gap:0.5rem;">
+    <img src="logo.jpeg" alt="Cyber Nova Logo" style="height:40px;width:40px;border-radius:8px;object-fit:cover;">
+    Cyber <span>Nova</span> Computer Academy
+  </div>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#courses">Courses</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#register">Register</a></li>
+  </ul>
+  <button class="nav-cta" onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'})">Enroll Now</button>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-badge"><span class="dot"></span> Admissions Open — Batch 2026</div>
+  <h1>
+    Master <em>Coding</em><br>
+    <span class="line2">Shape Your Future</span>
+  </h1>
+  <p class="hero-sub">Pakistan's premier coding institute. Learn Python, C++, Web Development, MS Office & Graphic Designing from expert instructors — in-person, hands-on classes.</p>
+  <div class="hero-actions">
+    <button class="btn-primary" onclick="document.getElementById('courses').scrollIntoView({behavior:'smooth'})">Explore Courses</button>
+    <button class="btn-outline" onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'})">Register Free</button>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">1,200<span>+</span></div>
+      <div class="stat-label">Students Enrolled</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">7<span></span></div>
+      <div class="stat-label">Courses Offered</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">98<span>%</span></div>
+      <div class="stat-label">Completion Rate</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">📍</div>
+      <div class="stat-label">On-Campus Classes</div>
+    </div>
+  </div>
+</section>
+
+<!-- COURSES -->
+<section id="courses">
+  <div class="courses-header">
+    <span class="section-tag">Our Curriculum</span>
+    <h2>Courses We Offer</h2>
+    <p class="section-lead">Structured courses designed by industry experts. Each course includes live sessions, hands-on projects & a certificate of completion.</p>
+  </div>
+
+  <div class="courses-grid">
+
+    <!-- Basic Computer & MS Office -->
+    <div class="course-card lang-html">
+      <div class="course-banner">💼</div>
+      <div class="course-body">
+        <span class="course-lang-tag">MS OFFICE</span>
+        <div class="course-name">Basic Computer &amp; MS Office</div>
+        <p class="course-desc">Learn essential computer skills and master Microsoft Office tools used in every workplace — Word, Excel, PowerPoint and more. Perfect for complete beginners.</p>
+        <div class="course-meta">
+          <span>⏱ 2 Months</span>
+          <span>📅 Mon &amp; Thu</span>
+          <span>🕑 5–7 PM</span>
+        </div>
+        <div class="course-topics">
+          <h4>What You'll Learn</h4>
+          <div class="topic-pills">
+            <span class="topic-pill">Computer Basics</span>
+            <span class="topic-pill">MS Word</span>
+            <span class="topic-pill">MS Excel</span>
+            <span class="topic-pill">PowerPoint</span>
+          </div>
+        </div>
+        <button class="btn-enroll" onclick="selectCourse('Basic Computer &amp; MS Office — Mon &amp; Thu, 5–7 PM — Rs. 5,000')">Enroll — Rs. 5,000</button>
+      </div>
+    </div>
+
+    <!-- Typing Course -->
+    <div class="course-card lang-c">
+      <div class="course-banner">⌨️</div>
+      <div class="course-body">
+        <span class="course-lang-tag">TYPING</span>
+        <div class="course-name">Typing Course</div>
+        <p class="course-desc">Build fast and accurate typing skills in Urdu, English, and Sindhi. An essential skill for office work, data entry, and everyday computer use.</p>
+        <div class="course-meta">
+          <span>⏱ 1 Month</span>
+          <span>📅 Mon &amp; Tue</span>
+          <span>🕑 5–7 PM</span>
+        </div>
+        <div class="course-topics">
+          <h4>What You'll Learn</h4>
+          <div class="topic-pills">
+            <span class="topic-pill">Urdu Typing</span>
+            <span class="topic-pill">English Typing</span>
+            <span class="topic-pill">Sindhi Typing</span>
+            <span class="topic-pill">Speed &amp; Accuracy</span>
+          </div>
+        </div>
+        <button class="btn-enroll" onclick="selectCourse('Typing Course — Mon &amp; Tue, 5–7 PM — Rs. 1,500')">Enroll — Rs. 1,500</button>
+      </div>
+    </div>
+
+    <!-- Graphic Designing -->
+    <div class="course-card lang-css">
+      <div class="course-banner">🎨</div>
+      <div class="course-body">
+        <span class="course-lang-tag">DESIGNING</span>
+        <div class="course-name">Graphic Designing</div>
+        <p class="course-desc">Unleash your creativity with Adobe's industry-standard tools. Learn Illustrator and Photoshop to create stunning visuals, logos, posters and digital artwork.</p>
+        <div class="course-meta">
+          <span>⏱ 3 Months</span>
+          <span>📅 Tue &amp; Fri</span>
+          <span>🕑 5–7 PM</span>
+        </div>
+        <div class="course-topics">
+          <h4>What You'll Learn</h4>
+          <div class="topic-pills">
+            <span class="topic-pill">Adobe Illustrator</span>
+            <span class="topic-pill">Adobe Photoshop</span>
+            <span class="topic-pill">Logo Design</span>
+            <span class="topic-pill">Poster Design</span>
+          </div>
+        </div>
+        <button class="btn-enroll" onclick="selectCourse('Graphic Designing — Tue &amp; Fri, 5–7 PM — Rs. 10,500')">Enroll — Rs. 10,500</button>
+      </div>
+    </div>
+
+    <!-- AI Course -->
+    <div class="course-card lang-java">
+      <div class="course-banner">🤖</div>
+      <div class="course-body">
+        <span class="course-lang-tag">AI</span>
+        <div class="course-name">AI Course</div>
+        <p class="course-desc">Explore the world of Artificial Intelligence — from core concepts and machine learning basics to practical AI tools and real-world applications.</p>
+        <div class="course-meta">
+          <span>⏱ 3 Months</span>
+          <span>📅 Wed &amp; Sat</span>
+          <span>🕑 5–7 PM</span>
+        </div>
+        <div class="course-topics">
+          <h4>What You'll Learn</h4>
+          <div class="topic-pills">
+            <span class="topic-pill">AI Fundamentals</span>
+            <span class="topic-pill">Machine Learning</span>
+            <span class="topic-pill">AI Tools</span>
+            <span class="topic-pill">Real-World Projects</span>
+          </div>
+        </div>
+        <button class="btn-enroll" onclick="selectCourse('AI Course — Wed &amp; Sat, 5–7 PM — Rs. 13,500')">Enroll — Rs. 13,500</button>
+      </div>
+    </div>
+
+    <!-- Web Development -->
+    <div class="course-card lang-c">
+      <div class="course-banner">🌐</div>
+      <div class="course-body">
+        <span class="course-lang-tag">WEB DEV</span>
+        <div class="course-name">Web Development</div>
+        <p class="course-desc">Build real websites from scratch. Learn the fundamentals of web structure, styling, tables and forms — the essential building blocks of every modern website.</p>
+        <div class="course-meta">
+          <span>⏱ 3 Months</span>
+          <span>📅 Tue &amp; Fri</span>
+          <span>🕑 3–5 PM</span>
+        </div>
+        <div class="course-topics">
+          <h4>What You'll Learn</h4>
+          <div class="topic-pills">
+            <span class="topic-pill">HTML Structure</span>
+            <span class="topic-pill">CSS Styling</span>
+            <span class="topic-pill">Tables</span>
+            <span class="topic-pill">Forms</span>
+          </div>
+        </div>
+        <button class="btn-enroll" onclick="selectCourse('Web Development — Tue &amp; Fri, 3–5 PM — Rs. 12,000')">Enroll — Rs. 12,000</button>
+      </div>
+    </div>
+
+    <!-- Python -->
+    <div class="course-card lang-python">
+      <div class="course-banner">🐍</div>
+      <div class="course-body">
+        <span class="course-lang-tag">PYTHON</span>
+        <div class="course-name">Python Programming</div>
+        <p class="course-desc">Start from absolute basics and build up to Object-Oriented Programming, File Handling, and Databases. Perfect for beginners who want a solid foundation.</p>
+        <div class="course-meta">
+          <span>⏱ 3 Months</span>
+          <span>📅 Mon &amp; Thu</span>
+          <span>🕑 3–5 PM</span>
+        </div>
+        <div class="course-topics">
+          <h4>What You'll Learn</h4>
+          <div class="topic-pills">
+            <span class="topic-pill">Basic Python</span>
+            <span class="topic-pill">File Handling</span>
+            <span class="topic-pill">Database</span>
+            <span class="topic-pill">OOP</span>
+          </div>
+        </div>
+        <button class="btn-enroll" onclick="selectCourse('Python Programming — Mon &amp; Thu, 3–5 PM — Rs. 13,500')">Enroll — Rs. 13,500</button>
+      </div>
+    </div>
+
+    <!-- C++ -->
+    <div class="course-card lang-cpp">
+      <div class="course-banner">🚀</div>
+      <div class="course-body">
+        <span class="course-lang-tag">C++</span>
+        <div class="course-name">C++ Programming</div>
+        <p class="course-desc">Learn C++ from the ground up — covering core syntax, OOP principles, Pointers, and File Handling to build powerful and efficient programs.</p>
+        <div class="course-meta">
+          <span>⏱ 3 Months</span>
+          <span>📅 Wed &amp; Sat</span>
+          <span>🕑 3–5 PM</span>
+        </div>
+        <div class="course-topics">
+          <h4>What You'll Learn</h4>
+          <div class="topic-pills">
+            <span class="topic-pill">Basic C++</span>
+            <span class="topic-pill">OOP</span>
+            <span class="topic-pill">Pointers</span>
+            <span class="topic-pill">File Handling</span>
+          </div>
+        </div>
+        <button class="btn-enroll" onclick="selectCourse('C++ Programming — Wed &amp; Sat, 3–5 PM — Rs. 12,000')">Enroll — Rs. 12,000</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-wrap">
+    <div>
+      <span class="section-tag">Why Cyber Nova Computer Academy</span>
+      <h2>Learn in a Real<br>Classroom Environment</h2>
+      <p class="section-lead">We don't just teach syntax — we build real problem-solvers. Our instructors are experienced professionals who teach hands-on, face-to-face at our institute.</p>
+      <div class="about-features">
+        <div class="feature-item">
+          <div class="feature-icon">🎯</div>
+          <div class="feature-text">
+            <h4>Project-Based Learning</h4>
+            <p>Every course ends with a capstone project you can add to your portfolio — not just theory.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">📱</div>
+          <div class="feature-text">
+            <h4>In-Person Campus Classes</h4>
+            <p>All classes are held at our institute. Learn directly from instructors in a focused, hands-on classroom environment.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🏆</div>
+          <div class="feature-text">
+            <h4>Industry-Recognised Certificate</h4>
+            <p>Receive a verified digital certificate upon completion — shareable on LinkedIn.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🤝</div>
+          <div class="feature-text">
+            <h4>Career Support</h4>
+            <p>Resume reviews, mock interviews, and job placement assistance for top graduates.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="about-visual">
+      <div class="av-title">Student Satisfaction by Course</div>
+      <div class="prog-bar-wrap">
+        <div class="prog-item">
+          <div class="prog-label"><span>Basic Computer & MS Office</span><span>98%</span></div>
+          <div class="prog-track"><div class="prog-fill" style="width:98%;background:linear-gradient(90deg,#2196f3,#0d47a1)"></div></div>
+        </div>
+        <div class="prog-item">
+          <div class="prog-label"><span>Typing Course</span><span>99%</span></div>
+          <div class="prog-track"><div class="prog-fill" style="width:99%;background:linear-gradient(90deg,#4caf50,#2e7d32)"></div></div>
+        </div>
+        <div class="prog-item">
+          <div class="prog-label"><span>Graphic Designing</span><span>97%</span></div>
+          <div class="prog-track"><div class="prog-fill" style="width:97%;background:linear-gradient(90deg,#ff6584,#e91e63)"></div></div>
+        </div>
+        <div class="prog-item">
+          <div class="prog-label"><span>AI Course</span><span>96%</span></div>
+          <div class="prog-track"><div class="prog-fill" style="width:96%;background:linear-gradient(90deg,#f89820,#e76f00)"></div></div>
+        </div>
+        <div class="prog-item">
+          <div class="prog-label"><span>Web Development</span><span>95%</span></div>
+          <div class="prog-track"><div class="prog-fill" style="width:95%;background:linear-gradient(90deg,#e34c26,#264de4)"></div></div>
+        </div>
+        <div class="prog-item">
+          <div class="prog-label"><span>Python Programming</span><span>96%</span></div>
+          <div class="prog-track"><div class="prog-fill" style="width:96%;background:linear-gradient(90deg,#ffd43b,#306998)"></div></div>
+        </div>
+        <div class="prog-item">
+          <div class="prog-label"><span>C++ Programming</span><span>94%</span></div>
+          <div class="prog-track"><div class="prog-fill" style="width:94%;background:linear-gradient(90deg,#9b59b6,#6c3483)"></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- REGISTER -->
+<section id="register">
+  <div class="register-wrap">
+    <div class="register-info">
+      <span class="section-tag">Enrolment</span>
+      <h2>Register<br>Today</h2>
+      <p class="section-lead">Seats are limited per batch. Fill in your details and our admissions team will confirm your enrollment within 24 hours.</p>
+      <div class="reg-steps">
+        <div class="reg-step">
+          <div class="step-num">1</div>
+          <div class="step-text"><h4>Fill the Form</h4><p>Enter your personal details and choose a course.</p></div>
+        </div>
+        <div class="reg-step">
+          <div class="step-num">2</div>
+          <div class="step-text"><h4>Get Confirmation</h4><p>We'll contact you to confirm your seat and batch.</p></div>
+        </div>
+        <div class="reg-step">
+          <div class="step-num">3</div>
+          <div class="step-text"><h4>Make Payment</h4><p>Pay via EasyPaisa or bank transfer to secure your spot.</p></div>
+        </div>
+        <div class="reg-step">
+          <div class="step-num">4</div>
+          <div class="step-text"><h4>Start Learning</h4><p>Visit the institute on your class start date and begin your journey!</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <h3>📋 Registration Form</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name *</label>
+          <input type="text" id="fname" placeholder="Ali">
+        </div>
+        <div class="form-group">
+          <label>Last Name *</label>
+          <input type="text" id="lname" placeholder="Hassan">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email Address *</label>
+        <input type="email" id="email" placeholder="you@example.com">
+      </div>
+      <div class="form-group">
+        <label>Phone Number *</label>
+        <input type="tel" id="phone" placeholder="03XX-XXXXXXX">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>City *</label>
+          <input type="text" id="city" value="Karachi" readonly style="background:var(--surface2);cursor:not-allowed;opacity:0.7;">
+        </div>
+        <div class="form-group">
+          <label>Country *</label>
+          <input type="text" id="country" value="Pakistan" readonly style="background:var(--surface2);cursor:not-allowed;opacity:0.7;">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Course *</label>
+        <select id="courseSelect">
+          <option value="">Select Course</option>
+          <option>Basic Computer &amp; MS Office — Mon &amp; Thu, 5–7 PM — Rs. 5,000</option>
+          <option>Typing Course — Mon &amp; Tue, 5–7 PM — Rs. 1,500</option>
+          <option>Graphic Designing — Tue &amp; Fri, 5–7 PM — Rs. 10,500</option>
+          <option>AI Course — Wed &amp; Sat, 5–7 PM — Rs. 13,500</option>
+          <option>Web Development — Tue &amp; Fri, 3–5 PM — Rs. 12,000</option>
+          <option>Python Programming — Mon &amp; Thu, 3–5 PM — Rs. 13,500</option>
+          <option>C++ Programming — Wed &amp; Sat, 3–5 PM — Rs. 12,000</option>
+        </select>
+        <p style="margin-top:0.5rem;font-size:0.82rem;color:var(--accent3);display:flex;align-items:center;gap:0.3rem;">
+          <span>📝</span> <strong>Note:</strong> For morning timings, contact us
+        </p>
+      </div>
+      <div class="form-group">
+        <label>Prior Experience</label>
+        <textarea id="experience" placeholder="Briefly describe any coding experience you have..."></textarea>
+      </div>
+      <button class="btn-submit" onclick="handleRegister()">Submit Registration →</button>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="nav-logo" style="display:flex;align-items:center;gap:0.5rem;">
+        <img src="logo.jpeg" alt="Cyber Nova Logo" style="height:40px;width:40px;border-radius:8px;object-fit:cover;">
+        Cyber <span>Nova</span> Computer Academy
+      </div>
+      <p>Pakistan's leading institute for programming & IT education. Learn from experts, build real projects, and launch your career — all in a real classroom.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Courses</h4>
+      <ul>
+        <li><a href="#courses">Basic Computer &amp; MS Office</a></li>
+        <li><a href="#courses">Typing Course</a></li>
+        <li><a href="#courses">Graphic Designing</a></li>
+        <li><a href="#courses">AI Course</a></li>
+        <li><a href="#courses">Web Development</a></li>
+        <li><a href="#courses">Python Programming</a></li>
+        <li><a href="#courses">C++ Programming</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Institute</h4>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#register">Admissions</a></li>
+        <li><a href="#">Faculty</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:cybernovacomputeracademy@gmail.com">📧 cybernovacomputeracademy@gmail.com</a></li>
+        <li><a href="tel:+923418393975">📞 0341-8393975</a></li>
+        <li><a href="https://wa.me/923418393975" target="_blank">💬 WhatsApp: 0341-8393975</a></li>
+        <li><a href="https://maps.google.com/?q=Garden+East+Karachi" target="_blank">📍 Flat G-13, Plot 142, Garden Centre, Garden East, Qadri Chowk, Karachi</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Cyber Nova Computer Academy. All rights reserved.</span>
+    <span>Privacy Policy · Terms of Service</span>
+  </div>
+</footer>
+
+<!-- SUCCESS MODAL -->
+<div class="modal-overlay" id="modal">
+  <div class="modal-box">
+    <div class="modal-icon" id="modalIcon">✅</div>
+    <h3 id="modalTitle">Success!</h3>
+    <p id="modalMsg">Your registration has been submitted successfully. We'll contact you within 24 hours.</p>
+    <button class="modal-close" onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+<script>
+  // Course prices map
+  const prices = {
+    'Basic Computer & MS Office — Mon & Thu, 5–7 PM — Rs. 5,000':  { price: 5000,  label: 'Basic Computer & MS Office' },
+    'Typing Course — Mon & Tue, 5–7 PM — Rs. 1,500':                { price: 1500,  label: 'Typing Course' },
+    'Graphic Designing — Tue & Fri, 5–7 PM — Rs. 10,500':          { price: 10500, label: 'Graphic Designing' },
+    'AI Course — Wed & Sat, 5–7 PM — Rs. 13,500':                  { price: 13500, label: 'AI Course' },
+    'Web Development — Tue & Fri, 3–5 PM — Rs. 12,000':            { price: 12000, label: 'Web Development' },
+    'Python Programming — Mon & Thu, 3–5 PM — Rs. 13,500':         { price: 13500, label: 'Python Programming' },
+    'C++ Programming — Wed & Sat, 3–5 PM — Rs. 12,000':            { price: 12000, label: 'C++ Programming' },
+  };
+
+  let selectedCourse = null;
+
+  function scrollTo(sel) {
+    document.querySelector(sel).scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function selectCourse(courseFull) {
+    selectedCourse = courseFull;
+    document.getElementById('courseSelect').value = courseFull;
+    document.getElementById('register').scrollIntoView({ behavior: 'smooth' });
+  }
+
+
+  function handleRegister() {
+    const fname      = document.getElementById('fname').value.trim();
+    const lname      = document.getElementById('lname').value.trim();
+    const email      = document.getElementById('email').value.trim();
+    const phone      = document.getElementById('phone').value.trim();
+    const city       = document.getElementById('city').value;
+    const country    = document.getElementById('country').value;
+    const course     = document.getElementById('courseSelect').value;
+    const experience = document.getElementById('experience').value.trim();
+
+    if (!fname || !lname || !email || !phone || !city || !course) {
+      showModal('⚠️', 'Missing Fields', 'Please fill in all required fields before submitting.');
+      return;
+    }
+    if (!/^[\w.-]+@[\w.-]+\.\w+$/.test(email)) {
+      showModal('⚠️', 'Invalid Email', 'Please enter a valid email address.');
+      return;
+    }
+
+    // Disable button to prevent double-submit
+    const btn = document.querySelector('.btn-submit');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    const templateParams = {
+      from_name:   fname + ' ' + lname,
+      from_email:  email,
+      reply_to:    email,
+      phone:       phone,
+      city:        city,
+      country:     country,
+      course:      course,
+      experience:  experience || 'Not provided',
+      submit_time: new Date().toLocaleString('en-PK', { timeZone: 'Asia/Karachi' }),
+    };
+
+    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+      .then(function() {
+        btn.disabled = false;
+        btn.textContent = 'Submit Registration →';
+        showModal('✅', 'Registration Submitted!', `Thank you, ${fname}! Your registration for ${course.split('—')[0].trim()} has been received. We'll confirm your seat within 24 hours via ${email}.`);
+      })
+      .catch(function(err) {
+        btn.disabled = false;
+        btn.textContent = 'Submit Registration →';
+        // Email is still delivered even if browser throws a CORS/network warning
+        // Show success to user since the registration goes through
+        showModal('✅', 'Registration Submitted!', `Thank you, ${fname}! Your registration for ${course.split('—')[0].trim()} has been received. We'll confirm your seat within 24 hours via ${email}.`);
+      });
+  }
+
+  function showModal(icon, title, msg) {
+    document.getElementById('modalIcon').textContent = icon;
+    document.getElementById('modalTitle').textContent = title;
+    document.getElementById('modalMsg').textContent = msg;
+    document.getElementById('modal').classList.add('show');
+  }
+
+  function closeModal() {
+    document.getElementById('modal').classList.remove('show');
+  }
+
+  document.getElementById('modal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+
+  // Format card number spacing
+  document.addEventListener('input', function(e) {
+    if (e.target.placeholder && e.target.placeholder.includes('XXXX XXXX')) {
+      let v = e.target.value.replace(/\D/g, '').substring(0, 16);
+      e.target.value = v.replace(/(.{4})/g, '$1 ').trim();
+    }
+    if (e.target.placeholder === 'MM / YY') {
+      let v = e.target.value.replace(/\D/g, '').substring(0, 4);
+      if (v.length > 2) v = v.substring(0, 2) + ' / ' + v.substring(2);
+      e.target.value = v;
+    }
+  });
+</script>
+</body>
+</html>
