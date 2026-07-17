@@ -553,6 +553,25 @@
     font-size: 0.8rem; color: var(--muted);
   }
 
+  /* ── HAMBURGER ── */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 6px;
+  }
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+  }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     .about-wrap, .register-wrap { grid-template-columns: 1fr; }
@@ -566,10 +585,8 @@
     nav { padding: 1rem 4%; }
     nav .nav-links { display: none; }
     .nav-logo { font-size: 1rem; }
-    .nav-logo img { height: 28px !important; width: 28px !important; }
-    .nav-cta { padding: 0.45rem 0.9rem; font-size: 0.8rem; }
     .nav-cta { display: none; }
-    .hamburger { display: flex !important; }
+    .hamburger { display: flex; }
 
     .nav-links.open {
       display: flex !important;
@@ -612,26 +629,6 @@
     .hero-actions { flex-direction: column; align-items: stretch; }
     .btn-primary, .btn-outline { text-align: center; }
   }
-  /* ── HAMBURGER ── */
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 6px;
-    border-radius: 6px;
-  }
-  .hamburger span {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: var(--text);
-    border-radius: 2px;
-    transition: all 0.3s;
-  }
-
 </style>
 </head>
 <body>
@@ -647,13 +644,12 @@
     <li><a href="#courses">Courses</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#register">Register</a></li>
+    
   </ul>
   <div style="display:flex;align-items:center;gap:0.7rem;">
     <button class="nav-cta" onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'})">Enroll Now</button>
     <button class="hamburger" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
@@ -722,7 +718,7 @@
             <span class="topic-pill">PowerPoint</span>
           </div>
         </div>
-        <button class="btn-enroll" onclick="selectCourse('Basic Computer &amp; MS Office — Mon &amp; Thu, 5–7 PM — Rs. 5,000')">Enroll — Rs. 5,000</button>
+        <button class="btn-enroll" onclick="selectCourse('Basic Computer &amp; MS Office — Rs. 6,000')">Enroll — Rs. 6,000</button>
       </div>
     </div>
 
@@ -747,7 +743,7 @@
             <span class="topic-pill">Speed &amp; Accuracy</span>
           </div>
         </div>
-        <button class="btn-enroll" onclick="selectCourse('Typing Course — Rs. 1,500')">Enroll — Rs. 1,500</button>
+        <button class="btn-enroll" onclick="selectCourse('Typing Course — Rs. 2,000')">Enroll — Rs. 2,000</button>
       </div>
     </div>
 
@@ -760,8 +756,7 @@
         <p class="course-desc">Unleash your creativity with Adobe's industry-standard tools. Learn Illustrator and Photoshop to create stunning visuals, logos, posters and digital artwork.</p>
         <div class="course-meta">
           <span>⏱ 3 Months</span>
-          <span>📅 2 Classes/Week</span>
-          <span>🕑 2 hrs/class</span>
+          <span>💰 Rs. 12,000</span>
         </div>
         <div class="course-topics">
           <h4>What You'll Learn</h4>
@@ -772,7 +767,7 @@
             <span class="topic-pill">Poster Design</span>
           </div>
         </div>
-        <button class="btn-enroll" onclick="selectCourse('Graphic Designing — Rs. 10,500')">Enroll — Rs. 10,500</button>
+        <button class="btn-enroll" onclick="selectCourse('Graphic Designing — Rs. 12,000')">Enroll — Rs. 14,500</button>
       </div>
     </div>
 
@@ -781,12 +776,11 @@
       <div class="course-banner">🤖</div>
       <div class="course-body">
         <span class="course-lang-tag">AI</span>
-        <div class="course-name">AI Course</div>
+        <div class="course-name">Artificial Intelligence (AI) Course</div>
         <p class="course-desc">Explore the world of Artificial Intelligence — from core concepts and machine learning basics to practical AI tools and real-world applications.</p>
         <div class="course-meta">
           <span>⏱ 3 Months</span>
-          <span>📅 2 Classes/Week</span>
-          <span>🕑 2 hrs/class</span>
+          <span>💰 Rs. 18,000</span>
         </div>
         <div class="course-topics">
           <h4>What You'll Learn</h4>
@@ -797,7 +791,77 @@
             <span class="topic-pill">Real-World Projects</span>
           </div>
         </div>
-        <button class="btn-enroll" onclick="selectCourse('AI Course — Rs. 13,500')">Enroll — Rs. 13,500</button>
+        <button class="btn-enroll" onclick="selectCourse('Artificial Intelligence (AI) Course — Rs. 18,000')">Enroll — Rs. 18,000</button>
+      </div>
+    </div>
+    <div class="course-card lang-java">
+      <div class="course-banner">📈</div>
+      <div class="course-body">
+        <span class="course-lang-tag">MARKETING</span>
+        <div class="course-name">Digital Marketing</div>
+        <p class="course-desc">Master the art of digital marketing — learn strategies, tools, and techniques to promote businesses online and reach your target audience effectively.</p>
+        <div class="course-meta">
+          <span>⏱ 3 Months</span>
+          <span>💰 Rs. 15,000</span>
+        </div>
+        <div class="course-topics">
+          <h4>What You'll Learn</h4>
+          <div class="topic-pills">
+            <span class="topic-pill">SEO &amp; SEM</span>
+            <span class="topic-pill">Social Media Marketing</span>
+            <span class="topic-pill">Content Strategy</span>
+            <span class="topic-pill">Analytics &amp; Tools</span>
+          </div>
+        </div>
+        <button class="btn-enroll" onclick="selectCourse('Digital Marketing — Rs. 15,000')">Enroll — Rs. 15,000</button>
+      </div>
+    </div>
+
+    <!-- E-Commerce -->
+    <div class="course-card lang-cpp">
+      <div class="course-banner">🛒</div>
+      <div class="course-body">
+        <span class="course-lang-tag">E-COMMERCE</span>
+        <div class="course-name">E-Commerce</div>
+        <p class="course-desc">Learn to build and manage successful online stores — from product listing to payment integration and customer management.</p>
+        <div class="course-meta">
+          <span>⏱ 3 Months</span>
+          <span>💰 Rs. 14,500</span>
+        </div>
+        <div class="course-topics">
+          <h4>What You'll Learn</h4>
+          <div class="topic-pills">
+            <span class="topic-pill">Platform Setup</span>
+            <span class="topic-pill">Product Management</span>
+            <span class="topic-pill">Payment Integration</span>
+            <span class="topic-pill">Customer Service</span>
+          </div>
+        </div>
+        <button class="btn-enroll" onclick="selectCourse('E-Commerce — Rs. 14,500')">Enroll — Rs. 14,500</button>
+      </div>
+    </div>
+
+    <!-- Dropshipping -->
+    <div class="course-card lang-python">
+      <div class="course-banner">🚚</div>
+      <div class="course-body">
+        <span class="course-lang-tag">DROPSHIPPING</span>
+        <div class="course-name">Dropshipping</div>
+        <p class="course-desc">Start your own online business without inventory — learn the complete dropshipping model from supplier selection to customer fulfillment.</p>
+        <div class="course-meta">
+          <span>⏱ 3 Months</span>
+          <span>💰 Rs. 14,000</span>
+        </div>
+        <div class="course-topics">
+          <h4>What You'll Learn</h4>
+          <div class="topic-pills">
+            <span class="topic-pill">Supplier Research</span>
+            <span class="topic-pill">Store Setup</span>
+            <span class="topic-pill">Marketing Strategies</span>
+            <span class="topic-pill">Profit Optimization</span>
+          </div>
+        </div>
+        <button class="btn-enroll" onclick="selectCourse('Dropshipping — Rs. 14,000')">Enroll — Rs. 14,000</button>
       </div>
     </div>
 
@@ -810,8 +874,8 @@
         <p class="course-desc">Build real websites from scratch. Learn the fundamentals of web structure, styling, tables and forms — the essential building blocks of every modern website.</p>
         <div class="course-meta">
           <span>⏱ 3 Months</span>
-          <span>📅 Tue &amp; Fri</span>
-          <span>🕑 3–5 PM</span>
+          
+          
         </div>
         <div class="course-topics">
           <h4>What You'll Learn</h4>
@@ -822,7 +886,7 @@
             <span class="topic-pill">Forms</span>
           </div>
         </div>
-        <button class="btn-enroll" onclick="selectCourse('Web Development — Tue &amp; Fri, 3–5 PM — Rs. 10,000')">Enroll — Rs. 10,000</button>
+        <button class="btn-enroll" onclick="selectCourse('Web Development — Rs. 13,500')">Enroll — Rs. 13,500</button>
       </div>
     </div>
 
@@ -835,8 +899,8 @@
         <p class="course-desc">Start from absolute basics and build up to Object-Oriented Programming, File Handling, and Databases. Perfect for beginners who want a solid foundation.</p>
         <div class="course-meta">
           <span>⏱ 3 Months</span>
-          <span>📅 Mon &amp; Thu</span>
-          <span>🕑 3–5 PM</span>
+          
+          
         </div>
         <div class="course-topics">
           <h4>What You'll Learn</h4>
@@ -847,7 +911,7 @@
             <span class="topic-pill">OOP</span>
           </div>
         </div>
-        <button class="btn-enroll" onclick="selectCourse('Python Programming — Mon &amp; Thu, 3–5 PM — Rs. 12,000')">Enroll — Rs. 12,000</button>
+        <button class="btn-enroll" onclick="selectCourse('Python Programming — Rs. 14,500')">Enroll — Rs. 14,500</button>
       </div>
     </div>
 
@@ -860,8 +924,8 @@
         <p class="course-desc">Learn C++ from the ground up — covering core syntax, OOP principles, Pointers, and File Handling to build powerful and efficient programs.</p>
         <div class="course-meta">
           <span>⏱ 3 Months</span>
-          <span>📅 Wed &amp; Sat</span>
-          <span>🕑 3–5 PM</span>
+          
+          
         </div>
         <div class="course-topics">
           <h4>What You'll Learn</h4>
@@ -872,7 +936,7 @@
             <span class="topic-pill">File Handling</span>
           </div>
         </div>
-        <button class="btn-enroll" onclick="selectCourse('C++ Programming — Wed &amp; Sat, 3–5 PM — Rs. 10,000')">Enroll — Rs. 10,000</button>
+        <button class="btn-enroll" onclick="selectCourse('C++ Programming — Rs. 14,000')">Enroll — Rs. 13,500</button>
       </div>
     </div>
 
@@ -921,24 +985,44 @@
       <div class="av-title">Student Satisfaction by Course</div>
       <div class="prog-bar-wrap">
         <div class="prog-item">
-          <div class="prog-label"><span>Python</span><span>96%</span></div>
-          <div class="prog-track"><div class="prog-fill" style="width:96%;background:linear-gradient(90deg,#ffd43b,#306998)"></div></div>
-        </div>
-        <div class="prog-item">
-          <div class="prog-label"><span>C++</span><span>94%</span></div>
-          <div class="prog-track"><div class="prog-fill" style="width:94%;background:linear-gradient(90deg,#9b59b6,#6c3483)"></div></div>
-        </div>
-        <div class="prog-item">
-          <div class="prog-label"><span>MS Office</span><span>98%</span></div>
+          <div class="prog-label"><span>Basic Computer & MS Office</span><span>98%</span></div>
           <div class="prog-track"><div class="prog-fill" style="width:98%;background:linear-gradient(90deg,#2196f3,#0d47a1)"></div></div>
+        </div>
+        <div class="prog-item">
+          <div class="prog-label"><span>Typing Course</span><span>99%</span></div>
+          <div class="prog-track"><div class="prog-fill" style="width:99%;background:linear-gradient(90deg,#4caf50,#2e7d32)"></div></div>
         </div>
         <div class="prog-item">
           <div class="prog-label"><span>Graphic Designing</span><span>97%</span></div>
           <div class="prog-track"><div class="prog-fill" style="width:97%;background:linear-gradient(90deg,#ff6584,#e91e63)"></div></div>
         </div>
         <div class="prog-item">
+          <div class="prog-label"><span>Artificial Intelligence (AI) Course</span><span>98%</span></div>
+          <div class="prog-track"><div class="prog-fill" style="width:98%;background:linear-gradient(90deg,#6f42c1,#5a32a3)"></div></div>
+        </div>
+        <div class="prog-item">
+          <div class="prog-label"><span>Digital Marketing</span><span>96%</span></div>
+          <div class="prog-track"><div class="prog-fill" style="width:96%;background:linear-gradient(90deg,#ff9800,#f57c00)"></div></div>
+        </div>
+        <div class="prog-item">
+          <div class="prog-label"><span>E-Commerce</span><span>95%</span></div>
+          <div class="prog-track"><div class="prog-fill" style="width:95%;background:linear-gradient(90deg,#9c27b0,#7b1fa2)"></div></div>
+        </div>
+        <div class="prog-item">
+          <div class="prog-label"><span>Dropshipping</span><span>94%</span></div>
+          <div class="prog-track"><div class="prog-fill" style="width:94%;background:linear-gradient(90deg,#00bcd4,#00838f)"></div></div>
+        </div>
+        <div class="prog-item">
           <div class="prog-label"><span>Web Development</span><span>95%</span></div>
           <div class="prog-track"><div class="prog-fill" style="width:95%;background:linear-gradient(90deg,#e34c26,#264de4)"></div></div>
+        </div>
+        <div class="prog-item">
+          <div class="prog-label"><span>Python Programming</span><span>96%</span></div>
+          <div class="prog-track"><div class="prog-fill" style="width:96%;background:linear-gradient(90deg,#ffd43b,#306998)"></div></div>
+        </div>
+        <div class="prog-item">
+          <div class="prog-label"><span>C++ Programming</span><span>94%</span></div>
+          <div class="prog-track"><div class="prog-fill" style="width:94%;background:linear-gradient(90deg,#9b59b6,#6c3483)"></div></div>
         </div>
       </div>
 
@@ -1010,13 +1094,16 @@
         <label>Course *</label>
         <select id="courseSelect">
           <option value="">Select Course</option>
-          <option>Basic Computer &amp; MS Office — Mon &amp; Thu, 5–7 PM — Rs. 5,000</option>
-          <option>Typing Course — Rs. 1,500</option>
-          <option>Graphic Designing — Tue &amp; Fri, 5–7 PM — Rs. 10,500</option>
-          <option>AI Course — Wed &amp; Sat, 5–7 PM — Rs. 13,500</option>
-          <option>Web Development — Tue &amp; Fri, 3–5 PM — Rs. 10,000</option>
-          <option>Python Programming — Mon &amp; Thu, 3–5 PM — Rs. 12,000</option>
-          <option>C++ Programming — Wed &amp; Sat, 3–5 PM — Rs. 10,000</option>
+          <option>Basic Computer &amp; MS Office — Rs. 6,000</option>
+          <option>Typing Course — Rs. 2,000</option>
+          <option>Graphic Designing — Rs. 12,000</option>
+          <option>Artificial Intelligence (AI) Course — Rs. 18,000</option>
+          <option>Digital Marketing — Rs. 15,000</option>
+          <option>E-Commerce — Rs. 14,500</option>
+          <option>Dropshipping — Rs. 14,000</option>
+          <option>Web Development — Rs. 13,500</option>
+          <option>Python Programming — Rs. 14,500</option>
+          <option>C++ Programming — Rs. 14,000</option>
         </select>
       </div>
       <div class="form-group">
@@ -1030,7 +1117,20 @@
 
 
 
-<!-- FOOTER -->
+<!-- CERTIFICATE VERIFICATION -->
+<section style="background:var(--surface);">
+  <div style="max-width:1000px;margin:0 auto;text-align:center;">
+    <span class="section-tag">Verify Your Achievement</span>
+    <h2>Certificate Verification</h2>
+    <p class="section-lead" style="margin: bottom 2px;">Verify your course completion certificate using your unique certificate ID or QR code.</p>
+    
+    <a href="verify.html" style="display:inline-block;padding:1rem 2.5rem;background:var(--accent);color:white;border:none;border-radius:12px;font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;text-decoration:none;transition:all 0.2s;box-shadow:0 0 30px rgba(108,99,255,0.4);" onmouseover="this.style.opacity='0.85';this.style.transform='translateY(-2px)'" onmouseout="this.style.opacity='1';this.style.transform='translateY(0)'">
+      🔍 Go to Verification Page
+    </a>
+
+    <p style="margin-top:2rem;font-size:0.9rem;color:var(--muted);">Your certificate code is provided via email after course completion. You can also scan the QR code printed on your physical certificate.</p>
+  </div>
+</section>
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
@@ -1046,7 +1146,10 @@
         <li><a href="#courses">Basic Computer &amp; MS Office</a></li>
         <li><a href="#courses">Typing Course</a></li>
         <li><a href="#courses">Graphic Designing</a></li>
-        <li><a href="#courses">AI Course</a></li>
+        <li><a href="#courses">Artificial Intelligence (AI) Course</a></li>
+        <li><a href="#courses">Digital Marketing</a></li>
+        <li><a href="#courses">E-Commerce</a></li>
+        <li><a href="#courses">Dropshipping</a></li>
         <li><a href="#courses">Web Development</a></li>
         <li><a href="#courses">Python Programming</a></li>
         <li><a href="#courses">C++ Programming</a></li>
@@ -1067,7 +1170,7 @@
         <li><a href="mailto:cybernovacomputeracademy@gmail.com">📧 cybernovacomputeracademy@gmail.com</a></li>
         <li><a href="tel:+923418393975">📞 0341-8393975</a></li>
         <li><a href="https://wa.me/923418393975" target="_blank">💬 WhatsApp: 0341-8393975</a></li>
-        <li><a href="https://maps.google.com/?q=Garden+East+Karachi" target="_blank">📍 Shah Qayam, near Maham Residency, on Pakola Masjid Road, opposite Leadership School</a></li>
+        <li><a href="https://maps.google.com/?q=Garden+East+Karachi" target="_blank">📍 Flat No. 31, Second Floor, Shah Qayam, Near Maham Residency, Pakola Masjid Road, Opposite LeaderShip School, Garden East, Karachi</a></li>
       </ul>
     </div>
   </div>
@@ -1090,13 +1193,16 @@
 <script>
   // Course prices map
   const prices = {
-    'Basic Computer & MS Office — Mon & Thu, 5–7 PM — Rs. 5,000':  { price: 5000,  label: 'Basic Computer & MS Office' },
-    'Typing Course — Rs. 1,500':                                    { price: 1500,  label: 'Typing Course' },
-    'Graphic Designing — Tue & Fri, 5–7 PM — Rs. 10,500':          { price: 10500, label: 'Graphic Designing' },
-    'AI Course — Wed & Sat, 5–7 PM — Rs. 13,500':                  { price: 13500, label: 'AI Course' },
-    'Web Development — Tue & Fri, 3–5 PM — Rs. 10,000':            { price: 10000, label: 'Web Development' },
-    'Python Programming — Mon & Thu, 3–5 PM — Rs. 12,000':         { price: 12000, label: 'Python Programming' },
-    'C++ Programming — Wed & Sat, 3–5 PM — Rs. 10,000':            { price: 10000, label: 'C++ Programming' },
+    'Basic Computer & MS Office — Rs. 6,000':       { price: 6000,  label: 'Basic Computer & MS Office' },
+    'Typing Course — Rs. 2,000':                    { price: 2000,  label: 'Typing Course' },
+    'Graphic Designing — Rs. 12,000':               { price: 12000, label: 'Graphic Designing' },
+    'Artificial Intelligence (AI) Course — Rs. 18,000': { price: 18000, label: 'Artificial Intelligence (AI) Course' },
+    'Digital Marketing — Rs. 15,000':               { price: 15000, label: 'Digital Marketing' },
+    'E-Commerce — Rs. 14,500':                      { price: 14500, label: 'E-Commerce' },
+    'Dropshipping — Rs. 14,000':                    { price: 14000, label: 'Dropshipping' },
+    'Web Development — Rs. 13,500':                 { price: 13500, label: 'Web Development' },
+    'Python Programming — Rs. 14,500':              { price: 14500, label: 'Python Programming' },
+    'C++ Programming — Rs. 14,000':                 { price: 14000, label: 'C++ Programming' },
   };
 
   let selectedCourse = null;
@@ -1108,28 +1214,7 @@
   function selectCourse(courseFull) {
     selectedCourse = courseFull;
     document.getElementById('courseSelect').value = courseFull;
-    updateOrderSummary(courseFull);
     document.getElementById('register').scrollIntoView({ behavior: 'smooth' });
-  }
-
-  function updateOrderSummary(courseFull) {
-    const info = prices[courseFull];
-    if (!info) return;
-    document.getElementById('summaryCourseName').textContent = info.label;
-    document.getElementById('summaryPrice').textContent = 'Rs. ' + info.price.toLocaleString();
-    document.getElementById('summaryTotal').textContent = 'Rs. ' + (info.price + 500).toLocaleString();
-  }
-
-  document.getElementById('courseSelect').addEventListener('change', function() {
-    updateOrderSummary(this.value);
-  });
-
-  function selectMethod(el, method) {
-    document.querySelectorAll('.pm-option').forEach(o => o.classList.remove('active'));
-    el.classList.add('active');
-    document.getElementById('ep-form').style.display = method === 'easypaisa' ? 'block' : 'none';
-    document.getElementById('bank-form').style.display = method === 'bank' ? 'block' : 'none';
-    document.getElementById('card-form').style.display = method === 'card' ? 'block' : 'none';
   }
 
   function handleRegister() {
@@ -1138,7 +1223,7 @@
     const email      = document.getElementById('email').value.trim();
     const phone      = document.getElementById('phone').value.trim();
     const city       = document.getElementById('city').value;
-    const batch      = document.getElementById('batch').value;
+    const country    = document.getElementById('country').value;
     const course     = document.getElementById('courseSelect').value;
     const experience = document.getElementById('experience').value.trim();
 
@@ -1151,7 +1236,6 @@
       return;
     }
 
-    // Disable button to prevent double-submit
     const btn = document.querySelector('.btn-submit');
     btn.disabled = true;
     btn.textContent = 'Sending…';
@@ -1162,7 +1246,7 @@
       reply_to:    email,
       phone:       phone,
       city:        city,
-      batch:       batch || 'Not specified',
+      country:     country,
       course:      course,
       experience:  experience || 'Not provided',
       submit_time: new Date().toLocaleString('en-PK', { timeZone: 'Asia/Karachi' }),
@@ -1172,15 +1256,11 @@
       .then(function() {
         btn.disabled = false;
         btn.textContent = 'Submit Registration →';
-        selectedCourse = course;
-        updateOrderSummary(course);
         showModal('✅', 'Registration Submitted!', `Thank you, ${fname}! Your registration for ${course.split('—')[0].trim()} has been received. We'll confirm your seat within 24 hours via ${email}.`);
       })
-      .catch(function(err) {
+      .catch(function() {
         btn.disabled = false;
         btn.textContent = 'Submit Registration →';
-        // Email is still delivered even if browser throws a CORS/network warning
-        // Show success to user since the registration goes through
         showModal('✅', 'Registration Submitted!', `Thank you, ${fname}! Your registration for ${course.split('—')[0].trim()} has been received. We'll confirm your seat within 24 hours via ${email}.`);
       });
   }
@@ -1200,15 +1280,17 @@
     if (e.target === this) closeModal();
   });
 
+
+
+
   function toggleMenu() {
     document.querySelector('.nav-links').classList.toggle('open');
   }
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
+  document.querySelectorAll('.nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
       document.querySelector('.nav-links').classList.remove('open');
     });
   });
-
 </script>
 </body>
 </html>
