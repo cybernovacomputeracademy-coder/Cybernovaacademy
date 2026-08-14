@@ -1273,13 +1273,13 @@
     // triggered synchronously (before any await/async call) or the popup gets blocked.
 
     const waText =
-      `📋 *New Registration - Cyber Nova Computer Academy*%0A` +
-      `👤 Name: ${fname} ${lname}%0A` +
-      `📧 Email: ${email}%0A` +
-      `📱 Phone: ${phone}%0A` +
-      `🏙️ City: ${city}%0A` +
-      `🎓 Course: ${courseName} (Rs. ${feeAmount})%0A` +
-      `📝 Experience: ${experience || 'Not provided'}`;
+      `*New Registration - Cyber Nova Computer Academy*%0A` +
+      `Name: ${fname} ${lname}%0A` +
+      `Email: ${email}%0A` +
+      `Phone: ${phone}%0A` +
+      `City: ${city}%0A` +
+      `Course: ${courseName} (Rs. ${feeAmount})%0A` +
+      `Experience: ${experience || 'Not provided'}`;
     window.open(`https://wa.me/${INSTITUTE_WHATSAPP}?text=${waText}`, '_blank');
 
     const btn = document.querySelector('.btn-submit');
