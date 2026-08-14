@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment — Cyber Nova Computer Academy</title>
+<link rel="icon" type="image/jpeg" href="logo.jpeg">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #111118;
+    --surface2: #1a1a26;
+    --border: #2a2a3a;
+    --accent: #6c63ff;
+    --accent3: #43e97b;
+    --text: #e8e8f0;
+    --muted: #888899;
+    --white: #ffffff;
+    --card-bg: #13131e;
+    --easypaisa: #00a651;
+    --bank: #1e88e5;
+    --whatsapp: #25d366;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family:'DM Sans', sans-serif;
+    background: var(--bg); color: var(--text);
+    min-height:100vh;
+    display:flex; align-items:center; justify-content:center;
+    padding: 3rem 5%;
+  }
+  .wrap { max-width: 640px; width:100%; }
+
+  .back-link {
+    display:inline-flex; align-items:center; gap:0.4rem;
+    color: var(--muted); text-decoration:none; font-size:0.85rem;
+    margin-bottom:1.5rem; transition: color 0.2s;
+  }
+  .back-link:hover { color: var(--accent); }
+
+  .header { text-align:center; margin-bottom:2rem; }
+  .header .logo {
+    display:inline-flex; align-items:center; gap:0.5rem;
+    font-family:'Syne', sans-serif; font-weight:800; font-size:1.2rem;
+    color: var(--white); margin-bottom:0.8rem;
+  }
+  .header .logo img { height:36px; width:36px; border-radius:8px; object-fit:cover; }
+  .header .logo span { color: var(--accent); }
+  .header h1 {
+    font-family:'Syne', sans-serif; font-size: clamp(1.6rem, 4vw, 2.2rem);
+    font-weight:700; color: var(--white); letter-spacing:-0.02em;
+  }
+  .header p { color: var(--muted); font-size:0.9rem; margin-top:0.5rem; }
+
+  .card {
+    background: var(--card-bg); border:1px solid var(--border);
+    border-radius:20px; padding:2rem; margin-bottom:1.5rem;
+  }
+  .card h3 {
+    font-family:'Syne', sans-serif; font-size:0.85rem; font-weight:700;
+    text-transform:uppercase; letter-spacing:0.08em; color:var(--muted);
+    margin-bottom:1.1rem;
+  }
+
+  .order-row { display:flex; justify-content:space-between; font-size:0.92rem; margin-bottom:0.7rem; }
+  .order-row .label { color: var(--muted); }
+  .order-row .value { color: var(--text); font-weight:500; }
+  .order-row.total {
+    border-top:1px solid var(--border); padding-top:0.9rem; margin-top:0.4rem;
+    font-weight:700;
+  }
+  .order-row.total .label { color: var(--white); }
+  .order-row.total .value { color: var(--accent3); font-size:1.2rem; }
+
+  .detail-row {
+    display:flex; justify-content:space-between; align-items:center;
+    padding:0.75rem 1rem; background:var(--surface2);
+    border:1px solid var(--border); border-radius:10px;
+    margin-bottom:0.6rem; font-size:0.88rem;
+  }
+  .detail-row .d-label { color: var(--muted); }
+  .detail-row .d-value { color: var(--white); font-weight:600; letter-spacing:0.02em; }
+  .copy-btn {
+    background: var(--surface); border:1px solid var(--border);
+    color: var(--muted); border-radius:6px; padding:0.25rem 0.6rem;
+    font-size:0.72rem; cursor:pointer; margin-left:0.6rem; transition:all 0.2s;
+  }
+  .copy-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+  .note {
+    font-size:0.8rem; color:var(--muted); line-height:1.6;
+    background: var(--surface2); border:1px solid var(--border);
+    border-radius:10px; padding:0.9rem 1rem; margin-top:1rem;
+  }
+
+  .btn-confirm {
+    width:100%; padding:1rem; margin-top:1.4rem;
+    background: var(--whatsapp); color:white; border:none;
+    border-radius:12px; font-family:'DM Sans', sans-serif;
+    font-size:0.98rem; font-weight:700; cursor:pointer;
+    display:flex; align-items:center; justify-content:center; gap:0.6rem;
+    transition: opacity 0.2s, transform 0.2s;
+    box-shadow: 0 0 24px rgba(37,211,102,0.3);
+  }
+  .btn-confirm:hover { opacity:0.9; transform:translateY(-1px); }
+
+  .secure { text-align:center; font-size:0.78rem; color:var(--muted); margin-top:0.9rem; }
+
+  .toast {
+    position:fixed; bottom:1.5rem; left:50%; transform:translateX(-50%) translateY(20px);
+    background: var(--surface2); border:1px solid var(--border); color:var(--text);
+    padding:0.7rem 1.4rem; border-radius:10px; font-size:0.85rem;
+    opacity:0; pointer-events:none; transition: all 0.25s;
+  }
+  .toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <a class="back-link" href="index.html">← Back to Home</a>
+
+  <div class="header">
+    <div class="logo">
+      <img src="logo.jpeg" alt="Cyber Nova Logo">
+      Cyber <span>Nova</span> Computer Academy
+    </div>
+    <h1>Complete Your Payment</h1>
+    <p>Thanks<span id="thanksName"></span>! Your registration is received. Secure your seat by completing the payment below.</p>
+  </div>
+
+  <div class="card">
+    <h3>Order Summary</h3>
+    <div class="order-row"><span class="label">Student</span><span class="value" id="sName">—</span></div>
+    <div class="order-row"><span class="label">Course</span><span class="value" id="sCourse">—</span></div>
+    <div class="order-row"><span class="label">Contact</span><span class="value" id="sPhone">—</span></div>
+    <div class="order-row total"><span class="label">Amount Payable</span><span class="value" id="sFee">Rs. 0</span></div>
+  </div>
+
+  <div class="card">
+    <h3>Bank Transfer Details</h3>
+    <div class="detail-row">
+      <span class="d-label">Bank Name</span>
+      <span class="d-value">National Bank of Pakistan</span>
+    </div>
+    <div class="detail-row">
+      <span class="d-label">Account Title</span>
+      <span class="d-value">Qurban Ali S/O Noor Muhammad</span>
+    </div>
+    <div class="detail-row">
+      <span class="d-label">Account Number</span>
+      <span class="d-value">0092003107163158
+        <button class="copy-btn" onclick="copyText('0092003107163158')">Copy</button>
+      </span>
+    </div>
+    <div class="detail-row">
+      <span class="d-label">IBAN</span>
+      <span class="d-value">PK51NBPA0092003107163158
+        <button class="copy-btn" onclick="copyText('PK51NBPA0092003107163158')">Copy</button>
+      </span>
+    </div>
+    <div class="detail-row">
+      <span class="d-label">Branch</span>
+      <span class="d-value">Mirpur Sakro</span>
+    </div>
+    <div class="note">💡 Transfer the payment directly to the account above via online/mobile banking. After paying, send us your transaction screenshot using the WhatsApp button below so we can confirm your seat.</div>
+
+    <button class="btn-confirm" onclick="confirmOnWhatsapp()">
+      💬 I've Paid — Send Confirmation on WhatsApp
+    </button>
+    <p class="secure">🔒 Please pay only to the official bank account listed above. Our admissions team will contact you within 24 hours after confirmation.</p>
+  </div>
+</div>
+
+<div class="toast" id="toast">Copied!</div>
+
+<script>
+  const INSTITUTE_WHATSAPP = '923198647809';
+
+  const params = new URLSearchParams(window.location.search);
+  const name   = params.get('name')   || '';
+  const email  = params.get('email')  || '';
+  const phone  = params.get('phone')  || '';
+  const course = params.get('course') || 'Selected Course';
+  const fee    = params.get('fee')    || '0';
+
+  document.getElementById('thanksName').textContent = name ? ', ' + name.split(' ')[0] : '';
+  document.getElementById('sName').textContent   = name || '—';
+  document.getElementById('sCourse').textContent = course;
+  document.getElementById('sPhone').textContent  = phone || '—';
+  document.getElementById('sFee').textContent    = 'Rs. ' + Number(fee).toLocaleString('en-PK');
+
+  function copyText(text) {
+    navigator.clipboard.writeText(text).then(function() {
+      showToast('Copied: ' + text);
+    }).catch(function() {
+      showToast('Could not copy — please copy manually');
+    });
+  }
+
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(function() { t.classList.remove('show'); }, 2000);
+  }
+
+  function confirmOnWhatsapp() {
+    const msg =
+      ` *Payment Confirmation - Cyber Nova Computer Academy*%0A` +
+      `Name: ${name}%0A` +
+      `Phone: ${phone}%0A` +
+      `Course: ${course}%0A` +
+      `Amount: Rs. ${Number(fee).toLocaleString('en-PK')}%0A` +
+      `Method: Bank Transfer%0A` +
+      `(Attaching payment screenshot)`;
+    window.open(`https://wa.me/${INSTITUTE_WHATSAPP}?text=${msg}`, '_blank');
+  }
+</script>
+</body>
+</html>
