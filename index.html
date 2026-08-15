@@ -426,8 +426,19 @@
 
   .form-group select option { background: var(--surface2); }
   .form-group textarea { resize: vertical; min-height: 80px; }
-
-  .btn-submit {
+ 
+  .morning-note {
+  color: #02fd88; /* Bright green text */
+  font-weight: 600; /* Makes the text easier to read with glow */
+  font-size: 15px;
+  /* Text-shadow creates the glow effect: (x-offset, y-offset, blur-radius, color) */
+  text-shadow: 
+    0 0 5px #00ff88,
+    0 0 10px #05e27b,
+    0 0 20px rgb(4, 224, 78);
+}
+ 
+.btn-submit {
     width: 100%; padding: 0.9rem;
     background: var(--accent); color: white; border: none;
     border-radius: 12px; font-family: 'DM Sans', sans-serif;
@@ -764,7 +775,7 @@
         <div class="course-name">Typing Course</div>
         <p class="course-desc">Build fast and accurate typing skills in Urdu, English, and Sindhi. An essential skill for office work, data entry, and everyday computer use.</p>
         <div class="course-meta">
-          <span>⏱ 1 Month</span>
+          <span>⏱ 2 Month</span>
           <span>📅 2 Classes/Week</span>
         </div>
         <div class="course-topics">
@@ -789,7 +800,7 @@
         <div class="course-name">Graphic Designing</div>
         <p class="course-desc">Unleash your creativity with Adobe's industry-standard tools. Learn Illustrator and Photoshop to create stunning visuals, logos, posters and digital artwork.</p>
         <div class="course-meta">
-          <span>⏱ 2 Months</span>
+          <span>⏱ 2.5 Months</span>
           <span>📅 2 Classes/Week</span>
         </div>
         <div class="course-topics">
@@ -1133,6 +1144,7 @@
       <div class="form-group">
         <label>Prior Experience</label>
         <textarea id="experience" placeholder="Briefly describe any coding experience you have..."></textarea>
+        <p class="morning-note">Note : For Morning Classes Plz contact us on Whatsapp</p>
       </div>
       <button class="btn-submit" onclick="handleRegister()">Submit Registration →</button>
     </div>
@@ -1193,7 +1205,7 @@
         <li><a href="mailto:cybernovacomputeracademy@gmail.com">📧 cybernovacomputeracademy@gmail.com</a></li>
         <li><a href="tel:+923198647809">📞 0319-8647809</a></li>
         <li><a href="https://wa.me/923198647809" target="_blank">💬 WhatsApp: 0319-8647809</a></li>
-        <li><a href="https://maps.google.com/?q=Garden+East+Karachi" target="_blank">📍 Flat No. 31, Second Floor, Shah Qayam, Near Maham Residency, Pakola Masjid Road, Opposite LeaderShip School, Garden East, Karachi</a></li>
+        <li><a href="https://maps.google.com/?q=Garden+East+Karachi" target="_blank">📍 Flat No. 31, Second Floor, Shah Qayam Co-operative Society, Soldier Bazar, Karachi</a></li>
       </ul>
     </div>
   </div>
