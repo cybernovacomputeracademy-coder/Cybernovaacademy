@@ -18,7 +18,7 @@ Cyber Nova Computer Academy is a premier computer education institute based in *
 - 🐍 Python Programming — Rs. 23,000
 - 🚀 C++ Programming — Rs. 25,000
 
-**Contact:** cybernovacomputeracademy@gmail.com | 0341-8393975
+**Contact:** cybernovacomputeracademy@gmail.com | 0319-8647809
 
 ---
 
