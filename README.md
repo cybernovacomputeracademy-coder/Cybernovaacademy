@@ -76,7 +76,7 @@ Found a vulnerability? Please email: **cybernovacomputeracademy@gmail.com**
 
 ---
 
-**Last Updated:** January 2025  
+**Last Updated:** September 2026  
 **Version:** 1.0
 
 ---
