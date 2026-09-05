@@ -8,16 +8,15 @@
 
 Cyber Nova Computer Academy is a premier computer education institute based in **Karachi, Pakistan**. We offer comprehensive courses in:
 
-- 💻 Basic Computer & MS Office — Rs. 6,000
-- ⌨️ Typing Course — Rs. 2,000
-- 🎨 Graphic Designing — Rs. 12,000
-- 🤖 Artificial Intelligence (AI) Course — Rs. 18,000
-- 📈 Digital Marketing — Rs. 15,000
-- 🛒 E-Commerce — Rs. 14,500
-- 🚚 Dropshipping — Rs. 14,000
-- 🌐 Web Development — Rs. 13,500
-- 🐍 Python Programming — Rs. 14,500
-- 🚀 C++ Programming — Rs. 14,000
+- 💻 Basic Computer & MS Office — Rs. 7,000
+- ⌨️ Typing Course — Rs. 5,000
+- 🎨 Graphic Designing — Rs. 10,000
+- 🛒 Shopify — Rs.15000
+- 📢 Facebook & Meta Ads — Rs. 15000
+- 📈 Crypto & Forex Technical Analysis — Rs. 37500
+- 🌐 Web Development — Rs. 20,000
+- 🐍 Python Programming — Rs. 23,000
+- 🚀 C++ Programming — Rs. 25,000
 
 **Contact:** cybernovacomputeracademy@gmail.com | 0341-8393975
 
