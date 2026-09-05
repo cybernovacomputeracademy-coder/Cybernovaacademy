@@ -63,7 +63,7 @@ See [LICENSE](./LICENSE) file for complete terms and conditions.
 |---|---|
 | 📧 **Email** | cybernovacomputeracademy@gmail.com |
 | 📞 **Phone** | 0319-8647809 |
-| 💬 **WhatsApp** | 0341-8393975 |
+| 💬 **WhatsApp** | 0319-8647809 |
 | 📍 **Address** | Flat No. 31, 2nd Floor Shah Qayam Co-operative Society, Soldier Bazaar, Karachi Plus Code: V2JH+379 |
 
 ---
