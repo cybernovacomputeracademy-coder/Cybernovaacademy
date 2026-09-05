@@ -1,6 +1,6 @@
 # Cyber Nova Computer Academy - Website
 
-**Official Website:** [https://pacifier-kill.github.io/cybernova/](https://cybernovacomputeracademy-coder.github.io/Cybernovaacademy/)
+**Official Website:** [https://cybernovacomputeracademy-coder.github.io/Cybernovaacademy/]
 
 ---
 
