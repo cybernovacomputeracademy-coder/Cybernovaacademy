@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -216,37 +216,50 @@
     border-radius: 16px; overflow: hidden;
     transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
   }
-  .course-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--accent);
-    box-shadow: 0 8px 40px rgba(108,99,255,0.15);
-  }
-
+  
   .course-banner {
-    height: 130px; display: flex; align-items: center;
-    justify-content: center; font-size: 3.5rem;
-    position: relative; overflow: hidden;
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+    border-radius: 20px 20px 0 0;
+    background: #11111b;
+    position: relative;
   }
 
   .course-banner::after {
     content: ''; position: absolute; inset: 0;
-    background: linear-gradient(to bottom, transparent 40%, var(--card-bg));
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.0) 0%,     
+        rgba(19,19,30,0.7) 100%  
+    );
+}
+  
+  .course-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    object-position: center 20%; 
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+  .course-body { 
+    padding: 1.4rem;    
+    display: flex;          
+    flex-direction: column;   
+    flex: 1;
+    align-items: flex-start; 
   }
-
-  .lang-python .course-banner { background: linear-gradient(135deg, #306998 0%, #ffd43b 100%); }
-  .lang-html   .course-banner { background: linear-gradient(135deg, #e34c26 0%, #f06529 100%); }
-  .lang-css    .course-banner { background: linear-gradient(135deg, #264de4 0%, #2965f1 100%); }
-  .lang-java   .course-banner { background: linear-gradient(135deg, #f89820 0%, #e76f00 100%); }
-  .lang-c      .course-banner { background: linear-gradient(135deg, #6295cb 0%, #2b6cb0 100%); }
-  .lang-cpp    .course-banner { background: linear-gradient(135deg, #9b59b6 0%, #6c3483 100%); }
-
-  .course-body { padding: 1.4rem; }
 
   .course-lang-tag {
     display: inline-block; padding: 0.2rem 0.7rem;
     border-radius: 999px; font-size: 0.72rem; font-weight: 600;
     margin-bottom: 0.7rem; letter-spacing: 0.06em;
+    align-self: flex-start;
   }
   .lang-python .course-lang-tag { background: rgba(255,212,59,0.15); color: #ffd43b; }
   .lang-html   .course-lang-tag { background: rgba(227,76,38,0.15); color: #f06529; }
@@ -273,47 +286,13 @@
   }
   .course-meta span { display: flex; align-items: center; gap: 0.3rem; }
 
-  .course-topics { margin-bottom: 1.4rem; }
+  .course-topics { margin-bottom: 1.4rem; flex: 1; }
   .course-topics h4 { font-size: 0.78rem; color: var(--muted); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.08em; }
   .topic-pills { display: flex; flex-wrap: wrap; gap: 0.4rem; }
   .topic-pill {
     background: var(--surface2); border: 1px solid var(--border);
     padding: 0.2rem 0.6rem; border-radius: 6px;
     font-size: 0.75rem; color: var(--text);
-  }
-  /* Container styling */
-  .Course-Details {
-    margin-top: 20px;
-    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
-  }
-
-  /* Heading: Fees Details */
-  .Course-Details h4 {
-    color: #ffffff;
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 12px;
-    letter-spacing: 0.3px;
-  }
-
-/* Unordered List Styling */
-  .Fees-Details ul {
-    padding-left: 20px; /* Bullet points ke liye space */
-    margin: 0;
-    list-style-type: disc; /* Bullet dots */
-  }
-
-/* List Items Styling */
-  .Fees-Details li {
-    color: #ffffff;
-    font-size: 0.95rem;
-    font-weight: 500;
-    line-height: 1.5;
-    margin-bottom: 8px; /* Items ke darmiyan spacing */
-  }
-
-  .Fees-Details li:last-child {
-    margin-bottom: 0;
   }
 
   .btn-enroll {
@@ -323,6 +302,7 @@
     font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
     cursor: pointer; transition: all 0.2s;
     font-weight: 500;
+    margin-top: auto;  
   }
   .btn-enroll:hover { background: var(--accent); border-color: var(--accent); color: white; }
 
@@ -743,12 +723,12 @@
 
     <!-- Basic Computer & MS Office -->
     <div class="course-card lang-html">
-      <div class="course-banner">💼</div>
+      <div class="course-banner"><img src="images/office.png" alt=""></div>
       <div class="course-body">
         <span class="course-lang-tag">MS OFFICE</span>
         <span class="course-lang-tag">Online Classes</span>
         <div class="course-name">Basic Computer &amp; MS Office</div>
-        <p class="course-desc">Learn essential computer skills and master Microsoft Office tools used in every workplace — Word, Excel, PowerPoint and more. Perfect for complete beginners.</p>
+        <p class="course-desc">Develop essential digital and office productivity skills, including Microsoft Word, Excel, PowerPoint, document management, and professional workplace applications.</p>
         <div class="course-meta">
           <span>⏱ 2 Months</span>
           <span>📅 2 Classes/Week</span>
@@ -768,12 +748,12 @@
 
     <!-- Typing Course -->
     <div class="course-card lang-c">
-      <div class="course-banner">⌨️</div>
+      <div class="course-banner"><img src="images/typing.png" alt=""></div>
       <div class="course-body">
         <span class="course-lang-tag">TYPING</span>
         <span class="course-lang-tag">Online Classes</span>
         <div class="course-name">Typing Course</div>
-        <p class="course-desc">Build fast and accurate typing skills in Urdu, English, and Sindhi. An essential skill for office work, data entry, and everyday computer use.</p>
+        <p class="course-desc">Enhance your typing speed, accuracy, efficiency, and keyboard proficiency for academic, professional, and administrative environments.</p>
         <div class="course-meta">
           <span>⏱ 2 Month</span>
           <span>📅 2 Classes/Week</span>
@@ -787,18 +767,18 @@
             <span class="topic-pill">Speed &amp; Accuracy</span>
           </div>
         </div>
-        <button class="btn-enroll" onclick="selectCourse('Typing Course', 4000)">Enroll — Rs. 4,000</button>
+        <button class="btn-enroll" onclick="selectCourse('Typing Course', 5000)">Enroll — Rs. 5,000</button>
       </div>
     </div>
 
     <!-- Graphic Designing -->
     <div class="course-card lang-css">
-      <div class="course-banner">🎨</div>
+      <div class="course-banner"><img src="images/graphics.png" alt=""></div>
       <div class="course-body">
         <span class="course-lang-tag">DESIGNING</span>
         <span class="course-lang-tag">Online Classes</span>
-        <div class="course-name">Graphic Designing</div>
-        <p class="course-desc">Unleash your creativity with Adobe's industry-standard tools. Learn Illustrator and Photoshop to create stunning visuals, logos, posters and digital artwork.</p>
+        <div class="course-name">Graphic Designing with AI</div>
+        <p class="course-desc">Master professional graphic design principles alongside cutting-edge AI tools to create visually compelling designs, branding materials, social media content, marketing creatives, and high-quality digital assets.</p>
         <div class="course-meta">
           <span>⏱ 2.5 Months</span>
           <span>📅 2 Classes/Week</span>
@@ -808,25 +788,24 @@
           <div class="topic-pills">
             <span class="topic-pill">Adobe Illustrator</span>
             <span class="topic-pill">Adobe Photoshop</span>
-            <span class="topic-pill">Canva</span>
             <span class="topic-pill">Logo Design</span>
             <span class="topic-pill">Poster Design</span>
           </div>
         </div>
-        <button class="btn-enroll" onclick="selectCourse('Graphic Designing', 15000)">Enroll — Rs. 15,000</button>
+        <button class="btn-enroll" onclick="selectCourse('Graphic Designing', 10000)">Enroll — Rs. 10,000</button>
       </div>
     </div>
 
 
     <!-- Shopify -->
     <div class="course-card lang-cpp">
-      <div class="course-banner">💲</div>
+      <div class="course-banner"><img src="images/shopify.png" alt=""></div>
       <div class="course-body">
         <span class="course-lang-tag">E-COMMERCE</span>
         <span class="course-lang-tag">New Course</span>
         <span class="course-lang-tag">Online Classes</span>
         <div class="course-name">Shopify</div>
-        <p class="course-desc">Learn to build and manage successful online stores — from product listing to payment integration and customer management.</p>
+        <p class="course-desc">Learn to build, customize, manage, and optimize professional e-commerce stores using Shopify.</p>
         <div class="course-meta">
           <span>⏱ 3 Months</span>
           <span>📅 2 Classes/Week</span>
@@ -840,19 +819,19 @@
             <span class="topic-pill">Customer Service</span>
           </div>
         </div>
-        <button class="btn-enroll" onclick="selectCourse('Shopify', 45000)">Enroll — Rs. 45,000</button>
+        <button class="btn-enroll" onclick="selectCourse('Shopify', 10000)">Enroll — Rs. 10,000</button>
       </div>
     </div>
 
     <!-- Facebook Meta Ads -->
     <div class="course-card lang-python">
-      <div class="course-banner">🎯</div>
+      <div class="course-banner"><img src="images/facebook.png" alt=""></div>
       <div class="course-body">
         <span class="course-lang-tag">FACEBOOK ADS</span>
         <span class="course-lang-tag">New Course</span>
         <span class="course-lang-tag">Online Classes</span>
-        <div class="course-name">Facebook Meta Ads</div>
-        <p class="course-desc">Learn to create and manage effective Facebook and Instagram advertising campaigns — from setup to optimization for maximum ROI.</p>
+        <div class="course-name">Facebook And Meta Ads</div>
+        <p class="course-desc">Learn to design, launch, manage, and optimize high-performing advertising campaigns across Facebook and Instagram.</p>
         <div class="course-meta">
           <span>⏱ 3 Months</span>
           <span>📅 2 Classes/Week</span>
@@ -866,19 +845,20 @@
             <span class="topic-pill">Performance Analysis</span>
           </div>
         </div>
-        <button class="btn-enroll" onclick="selectCourse('Facebook Meta Ads', 45000)">Enroll — Rs. 45,000</button>
+        <button class="btn-enroll" onclick="selectCourse('Facebook Meta Ads', 15000)">Enroll — Rs. 15,000</button>
       </div>
     </div>
 
       <!-- Crypto & Forex Technical Analysis -->
     <div class="course-card lang-cpp">
-      <div class="course-banner">💲</div>
+      <div class="course-banner"><img src="images/crypto.png" alt=""></div>
       <div class="course-body">
         <span class="course-lang-tag">CRYPTO & FOREX</span>
         <span class="course-lang-tag">New Course</span>
         <span class="course-lang-tag">Online Classes</span>
+        <span class="course-lang-tag">Beginner to Advance</span>
         <div class="course-name">Crypto & Forex Technical Analysis</div>
-        <p class="course-desc">Master the art of technical analysis for cryptocurrency and forex markets — from chart patterns to indicator usage.</p>
+        <p class="course-desc">Beginner to Advanced <br>Develop advanced skills in chart analysis, technical indicators, market trends, trading strategies, and professional risk management.</p>
         <div class="course-meta">
           <span>⏱ 3 Months</span>
           <span>📅 2 Classes/Week</span>
@@ -892,28 +872,18 @@
             <span class="topic-pill">Risk Management</span>
           </div>
         </div>
-        <div class ="Course-Details">
-          <h4>Fees Details</h4>
-          <div class ="Fees-Details">
-          <ul>
-            <li>Beginner fees: Rs. 25,000</li>
-            <li>Intermediate fees: Rs. 25,000</li>
-            <li>Advanced fees: Rs. 25,000</li>
-          </ul>
-          </div>
-        </div>
-        <button class="btn-enroll" onclick="selectCourse('Crypto & Forex Technical Analysis', 25000)">Enroll — Rs. 25,000</button>
+        <button class="btn-enroll" onclick="selectCourse('Crypto & Forex Technical Analysis', 37500)">Enroll — Rs. 37,500</button>
       </div>
     </div>
 
     <!-- Web Development -->
     <div class="course-card lang-c">
-      <div class="course-banner">🌐</div>
+      <div class="course-banner"><img src="images/webdev.png" alt=""></div>
       <div class="course-body">
         <span class="course-lang-tag">WEB DEV</span>
         <span class="course-lang-tag">Online Classes</span>
         <div class="course-name">Web Development</div>
-        <p class="course-desc">Build real websites from scratch. Learn the fundamentals of web structure, styling, tables and forms — the essential building blocks of every modern website.</p>
+        <p class="course-desc">Master the fundamentals of modern web development, including website design, coding, functionality, feature integration, and performance optimization.</p>
         <div class="course-meta">
           <span>⏱ 3 Months</span>
           <span>📅 2 Classes/Week</span>
@@ -927,18 +897,18 @@
             <span class="topic-pill">Forms</span>
           </div>
         </div>
-        <button class="btn-enroll" onclick="selectCourse('Web Development', 17000)">Enroll — Rs. 17,000</button>
+        <button class="btn-enroll" onclick="selectCourse('Web Development', 20000)">Enroll — Rs. 20,000</button>
       </div>
     </div>
 
     <!-- Python -->
     <div class="course-card lang-python">
-      <div class="course-banner">🐍</div>
+      <div class="course-banner"><img src="images/python.png" alt=""></div>
       <div class="course-body">
         <span class="course-lang-tag">PYTHON</span>
         <span class="course-lang-tag">Online Classes</span>
         <div class="course-name">Python Programming</div>
-        <p class="course-desc">Start from absolute basics and build up to Object-Oriented Programming, File Handling, and Databases. Perfect for beginners who want a solid foundation.</p>
+        <p class="course-desc">Learn Python, one of the world's most versatile programming languages, and develop practical skills for software development, web applications, automation, data-driven solutions, and artificial intelligence.</p>
         <div class="course-meta">
           <span>⏱ 3 Months</span>
           <span>📅 2 Classes/Week</span>
@@ -952,18 +922,18 @@
             <span class="topic-pill">OOP</span>
           </div>
         </div>
-        <button class="btn-enroll" onclick="selectCourse('Python Programming', 22000)">Enroll — Rs. 22,000</button>
+        <button class="btn-enroll" onclick="selectCourse('Python Programming', 23000)">Enroll — Rs. 23,000</button>
       </div>
     </div>
 
     <!-- C++ -->
     <div class="course-card lang-cpp">
-      <div class="course-banner">🚀</div>
+      <div class="course-banner"><img src="images/cpp.png" alt=""></div>
       <div class="course-body">
         <span class="course-lang-tag">C++</span>
         <span class="course-lang-tag">Online Classes</span>
         <div class="course-name">C++ Programming</div>
-        <p class="course-desc">Learn C++ from the ground up — covering core syntax, OOP principles, Pointers, and File Handling to build powerful and efficient programs.</p>
+        <p class="course-desc">Master the fundamentals of C++ programming, including logical thinking, conditional statements, problem-solving, and core programming concepts. Gain the foundation required to develop software, applications, games, and other high-performance computer programs.</p>
         <div class="course-meta">
           <span>⏱ 3 Months</span>
           <span>📅 2 Classes/Week</span>
@@ -977,7 +947,7 @@
             <span class="topic-pill">File Handling</span>
           </div>
         </div>
-        <button class="btn-enroll" onclick="selectCourse('C++ Programming', 18000)">Enroll — Rs. 18,000</button>
+        <button class="btn-enroll" onclick="selectCourse('C++ Programming', 25000)">Enroll — Rs. 25,000</button>
       </div>
     </div>
 
@@ -1132,14 +1102,14 @@
         <select id="courseSelect">
           <option value="">Select Course</option>
           <option value="7000">Basic Computer &amp; MS Office — Rs. 7,000</option>
-          <option value="4000">Typing Course — Rs. 4,000</option>
-          <option value="15000">Graphic Designing — Rs. 15,000</option>
-          <option value="45000">Shopify — Rs. 45,000</option>
-          <option value="45000">Facebook Meta Ads — Rs. 45,000</option>
-          <option value="75000">Crypto & Forex Technical Analysis — Rs. 75,000</option>
-          <option value="17000">Web Development — Rs. 17,000</option>
-          <option value="22000">Python Programming — Rs. 22,000</option>
-          <option value="18000">C++ Programming — Rs. 18,000</option>
+          <option value="5000">Typing Course — Rs. 5,000</option>
+          <option value="10000">Graphic Designing — Rs. 10,000</option>
+          <option value="15000">Shopify — Rs. 15,000</option>
+          <option value="15000">Facebook Meta Ads — Rs. 15,000</option>
+          <option value="37500">Crypto & Forex Technical Analysis — Rs. 37,500</option>
+          <option value="20000">Web Development — Rs. 20,000</option>
+          <option value="23000">Python Programming — Rs. 23,000</option>
+          <option value="25000">C++ Programming — Rs. 25,000</option>
         </select>
       </div>
       <div class="form-group">
@@ -1206,7 +1176,7 @@
         <li><a href="mailto:cybernovacomputeracademy@gmail.com">📧 cybernovacomputeracademy@gmail.com</a></li>
         <li><a href="tel:+923198647809">📞 0319-8647809</a></li>
         <li><a href="https://wa.me/923198647809" target="_blank">💬 WhatsApp: 0319-8647809</a></li>
-        <li><a href="https://maps.google.com/?q=Garden+East+Karachi" target="_blank">📍 Flat No. 31, Second Floor, Shah Qayam Co-operative Society, Soldier Bazar, Karachi Plus Code: V2JH+379</a></li>
+        <li><a href="https://maps.google.com/?q=Garden+East+Karachi" target="_blank">📍 Flat No. 31, Second Floor, Shah Qayam Co-operative Society, Soldier Bazar, Karachi</a></li>
       </ul>
     </div>
   </div>
@@ -1228,7 +1198,7 @@
 
 <script>
   // ── Institute WhatsApp number (receives every registration) ──
-  const INSTITUTE_WHATSAPP = '923198647809'; // country code + number, no + or 0
+  const INSTITUTE_WHATSAPP = '923198647809';
 
   let selectedCourse = null;
   let selectedFee = null;
@@ -1271,15 +1241,9 @@
       return;
     }
 
-    // Course name (without the "— Rs. X" part) and fee amount
     const courseName = courseText.split('—')[0].trim();
     const feeMatch    = courseText.match(/Rs\.\s*([\d,]+)/);
     const feeAmount   = feeMatch ? feeMatch[1].replace(/,/g, '') : (course || '0');
-
-    // ── 1) Open WhatsApp with the registration details pre-filled ──
-    // NOTE: browsers can only OPEN a WhatsApp chat with the message pre-filled —
-    // the student/admin still needs to tap "Send" inside WhatsApp. This must be
-    // triggered synchronously (before any await/async call) or the popup gets blocked.
 
     const waText =
       `*New Registration - Cyber Nova Computer Academy*%0A` +
