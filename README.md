@@ -1,6 +1,6 @@
 # Cyber Nova Computer Academy - Website
 
-**Official Website:** [https://cybernovacomputeracademy-coder.github.io/Cybernovaacademy/]
+**Official Website:** https://cybernovacomputeracademy-coder.github.io/Cybernovaacademy/
 
 ---
 
@@ -62,9 +62,9 @@ See [LICENSE](./LICENSE) file for complete terms and conditions.
 | Contact Type | Details |
 |---|---|
 | 📧 **Email** | cybernovacomputeracademy@gmail.com |
-| 📞 **Phone** | 0341-8393975 |
+| 📞 **Phone** | 0319-8647809 |
 | 💬 **WhatsApp** | 0341-8393975 |
-| 📍 **Address** | Flat No. 31, Second Floor, Shah Qayam, Near Maham Residency, Pakola Masjid Road, Opposite LeaderShip School, Garden East, Karachi |
+| 📍 **Address** | Flat No. 31, 2nd Floor Shah Qayam Co-operative Society, Soldier Bazaar, Karachi Plus Code: V2JH+379 |
 
 ---
 
